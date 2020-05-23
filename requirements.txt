@@ -3,4 +3,5 @@ numpy
 gunicorn
 pickle-mixin
 joblib
+scikit-learn
 sklearn
