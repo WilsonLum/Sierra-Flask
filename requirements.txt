@@ -2,3 +2,4 @@ flask
 pickle
 numpy
 sklearn
+gunicorn
