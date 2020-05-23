@@ -1,7 +1,18 @@
-<div class="login">
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sierra Water Point Prediction Analysis</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+
+
+<body>
 	<h1>Sierra Water Point Prediction Analysis</h1>
 
 	<!--  Main Input For receiving Query to our ML -->
+
+
 	<form action="{{ url_for('predict')}}"method="post">
 		<fieldset style="width:50%">
 			<legend>Input Numerical Data</legend>
@@ -67,8 +78,16 @@
 		<br>
 		<br>
 
-		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+		<button style="width:150px" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
 	</form>
 <br>
 <br>
-{{ prediction_text }}
+
+</body>
+</html>
+
+<!-- {{ prediction_text }}
+ -->
+
+
