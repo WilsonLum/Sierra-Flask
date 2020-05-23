@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request
 import pickle
 import numpy as np
-from sklearn.externals import joblib
+import joblib
 
 water_point = ['Yes – Functional (and in use)','Yes – Functional (but not in use)',
                'Yes - But damaged','No - Broken down']
