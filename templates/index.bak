@@ -1,0 +1,74 @@
+<div class="login">
+	<h1>Sierra Water Point Prediction Analysis</h1>
+
+	<!--  Main Input For receiving Query to our ML -->
+	<form action="{{ url_for('predict')}}"method="post">
+		<fieldset style="width:50%">
+			<legend>Input Numerical Data</legend>
+			<input type="text" name="Latitude" placeholder="Latitude (-90 to 90)" required="required" />
+			<input type="text" name="Longitude" placeholder="Longitude (-180 to 90)" required="required" />
+			<input type="text" name="Pump_Age" placeholder="Pump Age" required="required" />
+		</fieldset>
+		<br>
+		<br>
+
+		<fieldset style="width:50%">
+			<legend>Input Category Data</legend>
+			<p>
+				<label>Broke down repair</label>
+				<select name = "Broke down repair" id = "myList">
+					<option value = "0">Water point has never broken down</option>
+					<option value = "1">Less than a week</option>
+					<option value = "2">Over a week</option>
+					<option value = "3">Over a month</option>
+					<option value = "4">More than a year</option>
+					<option value = "5">I don't know</option>
+				</select>
+			</p>
+			<p>
+				<label>Owns water point</label>
+				<select name = "Owns water point" id = "myList">
+					<option value = "0">CBO</option>
+					<option value = "1">Community</option>
+					<option value = "2">NGO</option>
+					<option value = "3">GUMA</option>
+					<option value = "4">SALWACO</option>
+					<option value = "5">School</option>
+					<option value = "6">Health Facility</option>
+					<option value = "7">Other Institution</option>
+					<option value = "8">Private Individual</option>
+					<option value = "9">Unknown</option>
+				</select>
+			</p>
+			<p>
+				<label>Management Committee</label>
+				<select name = "Management Committee" id = "myList">
+					<option value = "0">Yes</option>
+					<option value = "1">No</option>
+					<option value = "2">Unknown</option>
+				</select>
+			</p>
+			<p>
+				<label>Extraction Type</label>
+				<select name = "Hand manual (e.g. rope pump, rope & bucket)" id = "myList">
+					<option value = "1">Yes</option>
+					<option value = "0">No</option>
+				</select>
+			</p>
+			<p>
+				<label>Waterpoint Type</label>
+				<select name = "Public tap/standpipe (stand-alone or water kiosk" id = "myList">
+					<option value = "1">Yes</option>
+					<option value = "0">No</option>
+				</select>
+			</p>
+
+		</fieldset>
+		<br>
+		<br>
+
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	</form>
+<br>
+<br>
+{{ prediction_text }}
