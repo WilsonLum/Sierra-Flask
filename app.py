@@ -1,6 +1,7 @@
 from flask import Flask, render_template,request
 import pickle
 import numpy as np
+# from sklearn.externals import joblib
 import joblib
 
 water_point = ['Yes – Functional (and in use)','Yes – Functional (but not in use)',
@@ -51,8 +52,16 @@ def predict():
     
     output = water_point[prediction]
 
-    return render_template('index.html',prediction_text='Waterpoint Fnctionality :  {}'.format(output))
-    #return render_template('index.html',prediction_text='Data_scaled : {}'.format(Latitude))
+    #return render_template('index.html',prediction_text='Waterpoint Fnctionality :  {}'.format(output))
+    return render_template('index.html',original_input={'Latitude':Latitude,
+                                                     'Longitude':Longitude,
+                                                     'broke_down_repair':broke_down_repair,
+                                                     'owns_water_point':owns_water_point,
+                                                     'management_committee':management_committee,
+                                                     'Pump_Age':Pump_Age,
+                                                     'extraction_type':extraction_type,
+                                                     'waterpoint_type':waterpoint_type},
+                                        result=output)
 
 # ***************************
 # WEBHOOK MAIN ENDPOINT : END
